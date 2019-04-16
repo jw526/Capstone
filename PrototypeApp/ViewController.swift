@@ -41,7 +41,7 @@ extension UIColor {
 
 
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate{
     
     
     
@@ -113,44 +113,66 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         var i = 0
         var o = 0
         var x = 0
-        while x < 4000{
-            let image = pupil.image
-            let Xmin = Int(pupil.frame.minX)
-            let Ymin = Int(pupil.frame.minY)
-            let Xmax = Int(pupil.frame.maxX)
-            let Ymax = Int(pupil.frame.maxY)
-            let radius = Int(pupil.frame.size.width)/2
-            let xCenter = Int(Xmin + radius)
-            let yCenter = Int(Ymin + radius)
-            let circle1 = UIBezierPath(arcCenter: CGPoint(x: xCenter, y: yCenter), radius: CGFloat(radius), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
-            let point = CGPoint(x:Int.random(in:Xmin...Xmax),y:Int.random(in: Ymin...Ymax))
-            let color = image?.getPixelColor(pos: point)
-            var red: CGFloat = 0
-            var green: CGFloat = 0
-            var blue: CGFloat = 0
-            //var alpha: CGFloat = 0
-            
-            red = color!.rgba.red
-            green = color!.rgba.green
-            blue = color!.rgba.blue
-            //defines the colors that are "black" and part of the pupil. Not all pixels in the pupil will be exactly black, rather, a varying range of dark shades that appear black.
-            //adjust the values for shades of blackness
-            if circle1.contains(point) && red < 0.2 && green < 0.2 && blue < 0.2{
-                //print(color)
-                //print(point)
-                
-                i += 1}
-            else{
-                o += 1}
-            
-            x += 1}
-        let ratio = 4 * Float(i)/Float(x)
-            
-//            print(color)
-//            print(point)
-            piCalc.text = String(ratio)
         
-   
+        let image = pupil.image
+        let Xmin = Int(pupil.frame.minX)
+        let Ymin = Int(pupil.frame.minY)
+        let Xmax = Int(pupil.frame.maxX)
+        let Ymax = Int(pupil.frame.maxY)
+        let radius = Int(pupil.frame.size.width)/2
+        let xCenter = Int(Xmin + radius)
+        let yCenter = Int(Ymin + radius)
+        print(Xmin, Ymin, Xmax, Ymax)
+        let circle1 = UIBezierPath(arcCenter: CGPoint(x: xCenter, y: yCenter), radius: CGFloat(radius), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        //find the color of the center point
+        let centerPoint = CGPoint(x:xCenter,y:yCenter)
+        let centerColor = image?.getPixelColor(pos: centerPoint)
+        if centerColor == nil {piCalc.text = "please select an image"}
+        else{
+            var centerR: CGFloat = centerColor!.rgba.red
+            var centerG: CGFloat = centerColor!.rgba.green
+            var centerB: CGFloat = centerColor!.rgba.blue
+            
+            while x < 3000{
+                
+                let point = CGPoint(x:Int.random(in:Xmin...Xmax),y:Int.random(in: Ymin...Ymax))
+                let color = image?.getPixelColor(pos: point)
+                var red: CGFloat = 0
+                var green: CGFloat = 0
+                var blue: CGFloat = 0
+                //var alpha: CGFloat = 0
+                //defines the colors that are "black" and part of the pupil. Not all pixels in the pupil will be exactly black, rather, a varying range of dark shades that appear black.
+
+                red = color!.rgba.red
+                green = color!.rgba.green
+                blue = color!.rgba.blue
+                //edge case when center is black
+                if circle1.contains(point) && (centerR + centerG + centerB <= 0.02) {
+                    centerR = 0.05
+                    centerG = 0.05
+                    centerB = 0.05
+                }
+                
+                //adjust the values for contrast: right now 0.2 deviation from the color of the center pt
+                //gray scale transformation: New grayscale image = ( (0.3 * R) + (0.59 * G) + (0.11 * B) ).
+                
+                if circle1.contains(point) && (red + green + blue <= 1.2 * (centerR + centerG + centerB))
+                {
+                    //print(color)
+                    //print(point)
+                    
+                    i += 1}
+                else{
+                    o += 1}
+                
+                x += 1}
+            let ratio = 4 * Float(i)/Float(x)
+            
+    //            print(color)
+    //            print(point)
+                piCalc.text = String(ratio)
+        }
+        
     }
     
     func faceDetect1(){

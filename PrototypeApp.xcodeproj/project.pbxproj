@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BBFC49C222CAD3300B6BB54 /* test1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BBFC49B222CAD3300B6BB54 /* test1.jpg */; };
+		4BBFC49E222CB09000B6BB54 /* eye.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BBFC49D222CB09000B6BB54 /* eye.jpg */; };
+		B21BDF8321867EC6000294F5 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BDF8221867EC6000294F5 /* Line.swift */; };
 		B2EBB9502173C4BB0007DC7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBB94F2173C4BB0007DC7D /* AppDelegate.swift */; };
 		B2EBB9522173C4BB0007DC7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBB9512173C4BB0007DC7D /* ViewController.swift */; };
 		B2EBB9552173C4BB0007DC7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EBB9532173C4BB0007DC7D /* Main.storyboard */; };
@@ -14,7 +17,6 @@
 		B2EBB95A2173C4BC0007DC7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EBB9582173C4BC0007DC7D /* LaunchScreen.storyboard */; };
 		B2EBB9652173C4BC0007DC7D /* PrototypeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBB9642173C4BC0007DC7D /* PrototypeAppTests.swift */; };
 		B2EBB9702173C4BC0007DC7D /* PrototypeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBB96F2173C4BC0007DC7D /* PrototypeAppUITests.swift */; };
-		B2EBB97E2173C6340007DC7D /* pupil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2EBB97D2173C6340007DC7D /* pupil.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BBFC49B222CAD3300B6BB54 /* test1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test1.jpg; path = ../../../Projects/pupil/test1.jpg; sourceTree = "<group>"; };
+		4BBFC49D222CB09000B6BB54 /* eye.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eye.jpg; sourceTree = "<group>"; };
+		B21BDF8221867EC6000294F5 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		B28DB366221C9D2000E7FC3A /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		B2EBB94C2173C4BB0007DC7D /* PrototypeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrototypeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2EBB94F2173C4BB0007DC7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2EBB9512173C4BB0007DC7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +54,6 @@
 		B2EBB96B2173C4BC0007DC7D /* PrototypeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrototypeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2EBB96F2173C4BC0007DC7D /* PrototypeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeAppUITests.swift; sourceTree = "<group>"; };
 		B2EBB9712173C4BC0007DC7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2EBB97D2173C6340007DC7D /* pupil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pupil.jpg; path = ../../../Downloads/pupil.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +104,14 @@
 		B2EBB94E2173C4BB0007DC7D /* PrototypeApp */ = {
 			isa = PBXGroup;
 			children = (
-				B2EBB97D2173C6340007DC7D /* pupil.jpg */,
+				B28DB366221C9D2000E7FC3A /* test.jpg */,
+				4BBFC49D222CB09000B6BB54 /* eye.jpg */,
 				B2EBB94F2173C4BB0007DC7D /* AppDelegate.swift */,
 				B2EBB9512173C4BB0007DC7D /* ViewController.swift */,
+				B21BDF8221867EC6000294F5 /* Line.swift */,
 				B2EBB9532173C4BB0007DC7D /* Main.storyboard */,
 				B2EBB9562173C4BC0007DC7D /* Assets.xcassets */,
+				4BBFC49B222CAD3300B6BB54 /* test1.jpg */,
 				B2EBB9582173C4BC0007DC7D /* LaunchScreen.storyboard */,
 				B2EBB95B2173C4BC0007DC7D /* Info.plist */,
 			);
@@ -234,8 +242,9 @@
 			files = (
 				B2EBB95A2173C4BC0007DC7D /* LaunchScreen.storyboard in Resources */,
 				B2EBB9572173C4BC0007DC7D /* Assets.xcassets in Resources */,
-				B2EBB97E2173C6340007DC7D /* pupil.jpg in Resources */,
 				B2EBB9552173C4BB0007DC7D /* Main.storyboard in Resources */,
+				4BBFC49C222CAD3300B6BB54 /* test1.jpg in Resources */,
+				4BBFC49E222CB09000B6BB54 /* eye.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2EBB9522173C4BB0007DC7D /* ViewController.swift in Sources */,
+				B21BDF8321867EC6000294F5 /* Line.swift in Sources */,
 				B2EBB9502173C4BB0007DC7D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2HQZLCS4VR;
+				DEVELOPMENT_TEAM = 9MX7Y93SCB;
 				INFOPLIST_FILE = PrototypeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,7 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2HQZLCS4VR;
+				DEVELOPMENT_TEAM = 9MX7Y93SCB;
 				INFOPLIST_FILE = PrototypeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
